@@ -9,7 +9,7 @@ const BalanceDisplay = () => {
     const { publicKey } = useWallet();
 
     useEffect(() => {
-
+        console.log(":Pub => ") , publicKey;
         if (!connection || !publicKey) {
             return
         }
@@ -17,9 +17,6 @@ const BalanceDisplay = () => {
             setBalance(info.lamports);
         })
 
-        return () => {
-
-        }
     }, [connection, publicKey])
 
 
@@ -27,7 +24,7 @@ const BalanceDisplay = () => {
         <div>
             <h2>Balance Section</h2>
             {
-                publicKey ? `SOL Balance => ${balance / LAMPORTS_PER_SOL} SOL` : 'TO Show Balance first Connect wallet'
+                publicKey ? `SOL Balance => ${balance / LAMPORTS_PER_SOL} SOL in address => ${publicKey}` : 'TO Show Balance first Connect wallet'
             }
         </div>
     )

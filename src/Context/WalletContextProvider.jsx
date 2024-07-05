@@ -11,7 +11,7 @@ const WalletContextProvider = ({children}) => {
     const wallets = useMemo(() => [], []);
 
     const endpoint = web3.clusterApiUrl("devnet");
-
+    console.log("Wallet ==> " ,wallets);
     return (
         <ConnectionProvider endpoint={endpoint}>
             <WalletProvider wallets={wallets}>
